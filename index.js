@@ -1,4 +1,7 @@
  const inquirer = require('inquirer');
+ const engineer = require('./lib/engineer');
+ const intern = require('./lib/intern');
+ const manager = require('./lib/manager');
  const fs = require('fs');
 
 const generateHTML = ({ mgrName, EmployeeID, email, OfficeNumber, TeamMembers, engName, engID, engEmail, Github, intName, intID, intEmail, IntSchool }) => {
