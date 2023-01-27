@@ -1,18 +1,14 @@
- const inquirer = require('inquirer');
- const engineer = require('./lib/engineer');
- const intern = require('./lib/intern');
- const manager = require('./lib/manager');
- const employee = require('./lib/employee');
- const fs = require('fs');
- const generateHTML = require('./src/generateHTML');
-
-managerQuestions();
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateHTML = require('./src/generateHTML');
+const engineer = require('./lib/engineer');
+const intern = require('./lib/intern');
+const manager = require('./lib/manager.js');
 
 let holdingCell = {
-    managerInfo: [],
-    internInfo: [],
-    engineerInfo: []
+    managerInfo: [], internInfo: [], engineerInfo: []
 };
+
 
 function managerQuestions() {
     inquirer
@@ -39,32 +35,101 @@ function managerQuestions() {
             }
         ])
         .then((answers) => {
-            holdingCell.managerInfo = answers;
-            additionalMember();
+            const newManager = new manager(answers.mgrName, answers.EmployeeID, answers.email, answers.OfficeNumber);
+            holdingCell.managerInfo = newManager;
+            nextEmployee();
         });
-    };
+};
+
+function nextEmployee() {
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'TeamMembers',
+                message: 'Would you like to add a team Member to your Team Project?',
+                choices: (['Yes i would like to add an Engineer', 'Yes i would like to add an intern', 'No i do not wish to add any more members.'])
+            }
+        ])
+        .then((answers) => {
+            // const nextEmployee = answers;
+            if (answers.TeamMembers === "Yes i would like to add an Engineer") {
+                console.log('Sweet you are adding an engineer!');
+                engineerQuestions();
+            }
+            if (answers.TeamMembers === "Yes i would like to add an intern") {
+                console.log('Sweet you are adding an intern!');
+                internQuestions();
+            }
+            if (answers.TeamMembers === "No i do not wish to add any more members.") {
+                console.log('Sounds great, team is full, no more members are being added!');
+                console.log(holdingCell);
+                createHTML();
+            }
+        })
+}
+
 
 function internQuestions() {
-        inquirer
-            .prompt([
-                {
-                    type: 'input',
-                    name: 'intName',
-                    message: 'What is the name of the Intern?',
-                },
-                {
-                    type: 'input',
-                    name: 'intID',
-                    message: 'What is the Interns ID?',
-                },
-                {
-                    type: 'input',
-                    name: 'intEmail',
-                    message: 'What is the Interns email?',
-                }
-            ])
-            .then(answer => {
-                arr.push(answer)
-                   console.log(arr)
-            })
-        }
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'intName',
+                message: 'What is the name of the Intern?',
+            },
+            {
+                type: 'input',
+                name: 'intID',
+                message: 'What is the Interns ID?',
+            },
+            {
+                type: 'input',
+                name: 'intEmail',
+                message: 'What is the Interns email?',
+            }
+        ])
+        .then((answers) => {
+            holdingCell.internInfo.push(answers)
+            nextEmployee();
+        });
+}
+
+function engineerQuestions() {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'engName',
+                message: 'What is the name of the Engineer?',
+            },
+            {
+                type: 'input',
+                name: 'engID',
+                message: 'What is the Engineers employee ID?',
+            },
+            {
+                type: 'input',
+                name: 'engEmail',
+                message: 'What is the Engineers email?',
+            },
+            {
+                type: 'input',
+                name: 'Github',
+                message: 'What is the engineers Github?',
+            },
+        ])
+        .then((answers) => {
+            holdingCell.internInfo.push(answers)
+            nextEmployee();
+        });
+}
+
+function createHTML() {
+    fs.writeFile('sample.html', generateHTML(holdingCell), (err) =>
+        err ? console.log(err) : console.log('.')
+    );
+}
+
+managerQuestions();
+
