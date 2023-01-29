@@ -1,44 +1,39 @@
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+# Team Profile Generator
 
+   ## Description
+   A Generator that will create your professional dream team based on the the input provided by you
+   
+   ## Table of Contents
+   - [Description](#description)
+   - [Installation](#installation)
+   - [Tests](#tests)
+   - [Credits](#credits)
+   - [How to Contribute](#ContributionGuidelines)
+   - [Badge](#badge)
+   - [Questions](#questions)
 
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
+   ## Installation
+   npm i and jest
 
+   ## Tests
+   Value tests on all of the classes that were created
 
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
+   ![Screenshot](./assets/images/BZ7DubDL15.png)
+   ![Screenshot](./assets/Images/ew7gP6htY7.png)
+   ![Screenshot](./assets/Images/gBNfrNr2dH.png)
+   ![Screenshot](./assets/Images/LI2FKeP3F0.png)
 
+   ## Credits
+   I had two different tutors, Dennis and Blake D. Also TAs Jessica and Chris helped me as well
 
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+   Links utilized in this project: 
+   https://www.npmjs.com/package/jest?activeTab=readme
+   https://umn.bootcampcontent.com/University-of-Minnesota-Boot-Camp/UofM-VIRT-FSF-PT-10-2022-U-LOLC/-/tree/main/10-OOP/02-Challenge
 
+   As well as the Mini project and various other activities from Module 10
 
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+   ## Badge
+   MIT License:   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-
-
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-
-
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-
-1 start the application
-2 prompt user for user input
- a prompt for manager info
- b prompt for employee info
- c prompt for engineer info
- d prompt for intern info
-3 generate HTML
- a generate for manager info
- b
- c
- d
- e write to file for manager info
+   ## Questions
+   If you have any further questions please follow up with me at: https://github.com/DarkunitX or you can email me at Darkunitx@live.com
