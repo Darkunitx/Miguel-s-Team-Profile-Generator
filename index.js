@@ -9,6 +9,8 @@ let holdingCell = {
     managerInfo: [], internInfo: [], engineerInfo: []
 };
 
+// accept input from user
+// generate specific card HTML (dynamically)
 
 function managerQuestions() {
     inquirer
@@ -63,7 +65,6 @@ function nextEmployee() {
             }
             if (answers.TeamMembers === "No i do not wish to add any more members.") {
                 console.log('Sounds great, team is full, no more members are being added!');
-                console.log(holdingCell);
                 createHTML();
             }
         })
@@ -87,10 +88,16 @@ function internQuestions() {
                 type: 'input',
                 name: 'intEmail',
                 message: 'What is the Interns email?',
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'What is the Interns school?',
             }
         ])
         .then((answers) => {
-            holdingCell.internInfo.push(answers)
+            const newIntern = new intern(answers.intName, answers.intID, answers.intEmail, answers.school);
+            holdingCell.internInfo.push(newIntern);
             nextEmployee();
         });
 }
@@ -120,10 +127,13 @@ function engineerQuestions() {
             },
         ])
         .then((answers) => {
-            holdingCell.internInfo.push(answers)
+            const newEngineer = new engineer(answers.engName, answers.engID, answers.engEmail, answers.Github);
+            holdingCell.engineerInfo.push(newEngineer);
             nextEmployee();
         });
 }
+
+console.log(holdingCell);
 
 function createHTML() {
     fs.writeFile('sample.html', generateHTML(holdingCell), (err) =>

@@ -29,3 +29,16 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
+
+1 start the application
+2 prompt user for user input
+ a prompt for manager info
+ b prompt for employee info
+ c prompt for engineer info
+ d prompt for intern info
+3 generate HTML
+ a generate for manager info
+ b
+ c
+ d
+ e write to file for manager info
