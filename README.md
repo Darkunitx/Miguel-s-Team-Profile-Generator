@@ -18,9 +18,9 @@
    ## Tests
    Value tests on all of the classes that were created
 
-   ![Screenshot1](./assets/Images/ew7gP6htY7.png "running tests")
-   ![Screenshot2](./assets/Images/gBNfrNr2dH.png "prompts")
-   ![Screenshot3](./assets/Images/LI2FKeP3F0.png "finish prompts")
+   ![Screenshot1](./assets/images/ew7gP6htY7.png "running tests")
+   ![Screenshot2](./assets/images/gBNfrNr2dH.png "prompts")
+   ![Screenshot3](./assets/images/LI2FKeP3F0.png "finish prompts")
    ![Screenshot4](./assets/images/BZ7DubDL15.png "finished website")
 
    ## Credits
