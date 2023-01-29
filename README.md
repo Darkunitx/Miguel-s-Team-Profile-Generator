@@ -18,10 +18,10 @@
    ## Tests
    Value tests on all of the classes that were created
 
-   ![Screenshot1](./assets/images/BZ7DubDL15.png)
-   ![Screenshot2](./assets/Images/ew7gP6htY7.png)
-   ![Screenshot3](./assets/Images/gBNfrNr2dH.png)
-   ![Screenshot4](./assets/Images/LI2FKeP3F0.png)
+   ![Screenshot1](./assets/Images/ew7gP6htY7.png "running tests")
+   ![Screenshot2](./assets/Images/gBNfrNr2dH.png "prompts")
+   ![Screenshot3](./assets/Images/LI2FKeP3F0.png "finish prompts")
+   ![Screenshot4](./assets/images/BZ7DubDL15.png "finished website")
 
    ## Credits
    I had two different tutors, Dennis and Blake D. Also TAs Jessica and Chris helped me as well
