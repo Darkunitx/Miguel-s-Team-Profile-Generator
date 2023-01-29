@@ -18,10 +18,10 @@
    ## Tests
    Value tests on all of the classes that were created
 
-   ![Screenshot](./assets/images/BZ7DubDL15.png)
-   ![Screenshot](./assets/Images/ew7gP6htY7.png)
-   ![Screenshot](./assets/Images/gBNfrNr2dH.png)
-   ![Screenshot](./assets/Images/LI2FKeP3F0.png)
+   ![Screenshot1](./assets/images/BZ7DubDL15.png)
+   ![Screenshot2](./assets/Images/ew7gP6htY7.png)
+   ![Screenshot3](./assets/Images/gBNfrNr2dH.png)
+   ![Screenshot4](./assets/Images/LI2FKeP3F0.png)
 
    ## Credits
    I had two different tutors, Dennis and Blake D. Also TAs Jessica and Chris helped me as well
