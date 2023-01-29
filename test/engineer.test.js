@@ -1,10 +1,10 @@
-const engineer = require ('../lib/engineer');
+const Engineer = require ('../lib/engineer');
 
-test('matches engineer', () => {
-    const engineer = new engineer('Bob', 12, 'Bob@email.com', '')
+test('matches properties put in', () => {
+    const engineer = new Engineer('Bob', 12, 'Bob@email.com', 'Bobgithub')
 
-    expect(intern.name).toEqual(expect.any(String));
-    expect(intern.age).toEqual(expect.any(Number));
-    expect(intern.email).toEqual(expect.any(String));
-    expect(intern.school).toEqual(expect.any(String));
+    expect(engineer.name).toEqual(expect.any(String));
+    expect(engineer.id).toEqual(expect.any(Number));
+    expect(engineer.email).toEqual(expect.any(String));
+    expect(engineer.github).toEqual(expect.any(String));
 })

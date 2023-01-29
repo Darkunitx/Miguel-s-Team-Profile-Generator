@@ -9,8 +9,6 @@ let holdingCell = {
     managerInfo: [], internInfo: [], engineerInfo: []
 };
 
-// accept input from user
-// generate specific card HTML (dynamically)
 
 function managerQuestions() {
     inquirer
@@ -19,21 +17,33 @@ function managerQuestions() {
                 type: 'input',
                 name: 'mgrName',
                 message: 'What is the name of the Manager of this project?',
+                validate: managerValue => {
+                    if (managerValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'EmployeeID',
                 message: 'What is your employee ID?',
+                validate: managerValue => {
+                    if (managerValue) { return true;} else { console.log("Not a Number"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'email',
                 message: 'What is your email address?',
+                validate: managerValue => {
+                    if (managerValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'OfficeNumber',
                 message: 'What is your Office Number?',
+                validate: managerValue => {
+                    if (managerValue) { return true;} else { console.log("Not a Number"); return false;}
+                }
             }
         ])
         .then((answers) => {
@@ -78,21 +88,33 @@ function internQuestions() {
                 type: 'input',
                 name: 'intName',
                 message: 'What is the name of the Intern?',
+                validate: internValue => {
+                    if (internValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'intID',
                 message: 'What is the Interns ID?',
+                validate: internValue => {
+                    if (internValue) { return true;} else { console.log("Not a Number"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'intEmail',
                 message: 'What is the Interns email?',
+                validate: internValue => {
+                    if (internValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'school',
                 message: 'What is the Interns school?',
+                validate: internValue => {
+                    if (internValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             }
         ])
         .then((answers) => {
@@ -109,21 +131,33 @@ function engineerQuestions() {
                 type: 'input',
                 name: 'engName',
                 message: 'What is the name of the Engineer?',
+                validate: engineerValue => {
+                    if (engineerValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'engID',
                 message: 'What is the Engineers employee ID?',
+                validate: engineerValue => {
+                    if (engineerValue) { return true;} else { console.log("Not a Number"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'engEmail',
                 message: 'What is the Engineers email?',
+                validate: engineerValue => {
+                    if (engineerValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
             {
                 type: 'input',
                 name: 'Github',
                 message: 'What is the engineers Github?',
+                validate: engineerValue => {
+                    if (engineerValue) { return true;} else { console.log("Not a string"); return false;}
+                }
             },
         ])
         .then((answers) => {
@@ -132,8 +166,6 @@ function engineerQuestions() {
             nextEmployee();
         });
 }
-
-console.log(holdingCell);
 
 function createHTML() {
     fs.writeFile('sample.html', generateHTML(holdingCell), (err) =>
